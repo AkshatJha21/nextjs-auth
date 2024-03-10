@@ -46,6 +46,7 @@ export default function LoginPage() {
             <input className="p-2 text-black border border-gray-300 rounded-sm mb-4 focus:outline-none focus:border-rose-500" type="password" id="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} placeholder="password" />
             <button onClick={onLogin} className="p-2 border border-gray-300 rounded-md mb-4">{buttonDisabled ? "No Login" : "Login"}</button>
             <Link href="/signup">Visit signup page</Link>
+            <Link href="/resetpassword">Forgot password</Link>
         </div>
     )
 }
