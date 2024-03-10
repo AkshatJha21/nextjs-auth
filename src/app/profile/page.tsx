@@ -29,13 +29,13 @@ export default function ProfilePage() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <h1>Profile</h1>
-            <hr />
-            <p>Profile page</p>
-            <h2 className="bg-gray-500 rounded-md p-3">{data === "" ? "No Data" : <Link href={`/profile/${data}`}>{data}</Link>}</h2>
-            <hr />
-            <button onClick={getUserDetails} className="bg-violet-500 hover:bg-violet-700 mt-4 text-white font-semibold py-2 px-4 rounded-md">Details</button>
-            <button onClick={logout} className="bg-blue-500 hover:bg-blue-700 mt-4 text-white font-semibold py-2 px-4 rounded-md">Logout</button>
+            <div className="bg-slate-800 p-6 rounded-md drop-shadow-md flex flex-col border border-slate-700 w-3/12">
+                <h1 className="mb-4 font-semibold text-lg">Profile</h1>
+                <p className="text-sm mb-1">Your userID:</p>
+                <h2 className="p-2 text-center text-xs bg-zinc-200 rounded-md font-light text-black">{data === "" ? "No Data" : <Link href={`/profile/${data}`}>{data}</Link>}</h2>
+                <button onClick={getUserDetails} className="p-2 bg-gray-500 hover:bg-gray-600 transition-all rounded-md mt-4">Details</button>
+                <button onClick={logout} className="p-2 bg-rose-500 hover:bg-rose-600 transition-all rounded-md mt-4">Logout</button>
+            </div>
         </div>
     )
 }
