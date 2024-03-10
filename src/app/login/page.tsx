@@ -48,7 +48,7 @@ export default function LoginPage() {
                 </div>
                 <button onClick={onLogin} className="p-2 bg-gray-500 hover:bg-gray-600 transition-all rounded-md mb-4">{buttonDisabled ? "Enter Details" : "Login"}</button>
                 <Link className="flex justify-center mt-2 text-sm hover:underline" href="/signup">Not a user? Sign Up</Link>
-                <Link className="flex justify-center mt-2 text-sm hover:underline" href="/resetpassword">Forgot password</Link>
+                <Link className="flex justify-center mt-2 text-sm hover:underline" href="/forgotpassword">Forgot password</Link>
             </div>
         </div>
     )
