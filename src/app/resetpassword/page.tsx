@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const ResetPasswordPage = () => {
 
     // search email if user exists or not
@@ -10,6 +12,7 @@ const ResetPasswordPage = () => {
                 <label className="text-sm mb-1" htmlFor="email">Email</label>
                 <input className="p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-zinc-500 text-black" type="text" id="email" placeholder="email" />
                 <button className="p-2 bg-gray-500 hover:bg-gray-600 transition-all rounded-md mb-4">Send Email</button>
+                <Link className="flex justify-center mt-2 text-sm hover:underline" href="/login">Back To Login</Link>
             </div>
         </div>
      );

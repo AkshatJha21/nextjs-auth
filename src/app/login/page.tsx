@@ -47,7 +47,7 @@ export default function LoginPage() {
                     <input className="p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:border-zinc-500 text-black" type="password" id="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} placeholder="password" />
                 </div>
                 <button onClick={onLogin} className="p-2 bg-gray-500 hover:bg-gray-600 transition-all rounded-md mb-4">{buttonDisabled ? "Enter Details" : "Login"}</button>
-                <Link className="flex justify-center mt-2 text-sm hover:underline" href="/signup">Visit signup page</Link>
+                <Link className="flex justify-center mt-2 text-sm hover:underline" href="/signup">Not a user? Sign Up</Link>
                 <Link className="flex justify-center mt-2 text-sm hover:underline" href="/resetpassword">Forgot password</Link>
             </div>
         </div>
