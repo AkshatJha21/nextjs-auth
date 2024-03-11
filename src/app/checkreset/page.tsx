@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const ResetPasswordPage = () => {
     
@@ -21,8 +22,10 @@ const ResetPasswordPage = () => {
         try {
             await axios.post('/api/users/checkreset', {token});
             setVerified(true);
+            toast.success("User verified");
         } catch (error: any) {
             setError(true);
+            toast.error("Something went wrong");
             console.log(error.response.data);
         }
     }
@@ -31,9 +34,11 @@ const ResetPasswordPage = () => {
         try {
             setLoading(true);
             await axios.post('/api/users/resetpassword', {token, password: user.password});
+            toast.success("Password changed");
             router.push('/login');
         } catch (error: any) {
             console.log("Password reset failure", error.message);
+            toast.error("Something went wrong");
         } finally {
             setLoading(false);
         }

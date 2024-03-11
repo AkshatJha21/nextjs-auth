@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const ForgotPasswordPage = () => {
     // search email if user exists or not
@@ -19,9 +20,11 @@ const ForgotPasswordPage = () => {
             setLoading(true);
             const response = await axios.post("/api/users/forgotpassword", user);
             console.log("User found", response.data);
+            toast.success("Email verified");
             router.push('/checkreset');
         } catch (error: any) {
             console.log("No user found", error.message);
+            toast.error("Something went wrong");
         } finally {
             setLoading(false);
         }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function SignupPage() {
 
@@ -21,10 +22,11 @@ export default function SignupPage() {
             setLoading(true);
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup successful", response.data);
-            router.push('/verifyemail')
+            toast.success("Signed In");
+            router.push('/verifyemail');
         } catch (error: any) {
             console.log("Signup failed", error.message);
-            // ADD REACT HOT TOAST
+            toast.error("Something went wrong");
         } finally {
             setLoading(false);
         }
